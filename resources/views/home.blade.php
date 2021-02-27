@@ -24,6 +24,11 @@
     <div class="col-12 text-center">
         <h1>Bienvenido, {{Auth::user()->name}}</h1>
     </div>
+    <div class="slider">
+        <img src="{{url("/img/SLIDER/slider-1.png")}}" />
+        <img src="{{url("/img/SLIDER/slider-2.png")}}" />
+        <img src="{{url("/img/SLIDER/slider-3.png")}}" />
+    </div>
     @foreach([
     ["productos", "ventas", "vender", "clientes"],
     ["usuarios", "acerca_de", "soporte"]

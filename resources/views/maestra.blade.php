@@ -20,27 +20,6 @@
 --}}
 <!doctype html>
 <html lang="es">
-<!--
-
-  ____          _____               _ _           _
- |  _ \        |  __ \             (_) |         | |
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |
-        |___/                               |___/
-
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-
-    Copyright (c) 2020 Luis Cabrera Benito
-    Licenciado bajo la licencia MIT
-
-    El texto de arriba debe ser incluido en cualquier redistribucion
--->
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -49,6 +28,12 @@
     <title>@yield("titulo") - {{env("APP_NAME")}}</title>
     <link href="{{url("/css/bootstrap.min.css")}}" rel="stylesheet">
     <link href="{{url("/css/all.min.css")}}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="{{url("/sss/sss.min.js")}}"></script><link rel="stylesheet" href="{{url("/sss/sss.css")}}" type="text/css" media="all">
+    <script>jQuery(function($) {$('.slider').sss();});</script>
+
     <style>
         body {
             padding-top: 70px;
@@ -59,7 +44,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" target="_blank" href="//parzibyte.me/blog">{{env("APP_NAME")}}</a>
+    <a class="navbar-brand" target="_blank" href="{{route("home")}}"><img src="{{url("/img/logo/logo-amoblando.svg")}}" height="80" width="200"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             id="botonMenu" aria-label="Mostrar u ocultar menú">
         <span class="navbar-toggler-icon"></span>
@@ -71,7 +56,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Login</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('register') }}">
                         Registro
@@ -81,10 +65,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("home")}}">Inicio&nbsp;<i class="fa fa-home"></i></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route("productos.index")}}">Productos&nbsp;<i class="fa fa-box"></i></a>
+                <li class="nav item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Salas&nbsp;<i class="fa fa-couch"></i></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route("productos.index")}}">Sofá Cama</a>
+                        <a class="dropdown-item" href="{{route("productos.index")}}">Sofá</a>
+                        <a class="dropdown-item" href="{{route("productos.index")}}">Sofá L</a>
+                    </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Alcobas&nbsp;<i class="fa fa-bed"></i></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route("productos.index")}}">Camas</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">Comedores&nbsp;<i class="fa fa-chair"></i></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route("productos.index")}}">Juegos de Comedor</a>
+                        <a class="dropdown-item" href="{{route("productos.index")}}">Mesas</a>
+                        <a class="dropdown-item" href="{{route("productos.index")}}">Sillas</a>
+                    </div>
+                </li>
+            <!--<li class="nav-item">
                     <a class="nav-link" href="{{route("vender.index")}}">Vender&nbsp;<i class="fa fa-cart-plus"></i></a>
                 </li>
                 <li class="nav-item">
@@ -95,6 +98,15 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("clientes.index")}}">Clientes&nbsp;<i class="fa fa-users"></i></a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route("clientes.index")}}">Contáctenos&nbsp;<i class="fa fa-users"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route("clientes.index")}}">Iniciar Sesión&nbsp;<i class="fa fa-users"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route("clientes.index")}}">Registrarse&nbsp;<i class="fa fa-users"></i></a>
                 </li>
             @endguest
         </ul>
